@@ -10,7 +10,7 @@ To get it, add the following text to your build file:
 }
 
 dependencies {
-  compile 'com.github.batuypn:SmartConfigLibrary:v1.0.1'
+  compile 'com.github.batuypn:SmartConfigLibrary:v1.0.6'
 }
 ```
 
