@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven'
 
 android {
     compileSdkVersion 22
@@ -31,6 +32,8 @@ repositories {
     mavenCentral()
     mavenLocal()
 }
+
+
 
 apply plugin: 'android-apt'
 def AAVersion = '3.3.1'
