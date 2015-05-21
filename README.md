@@ -3,7 +3,7 @@ SmartConfig Android Library for CC3200
 
 To get it, add the following text to your build file:
 ```
-<repositories {
+repositories {
   maven {
     url "https://jitpack.io"
 	}
