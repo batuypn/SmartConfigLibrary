@@ -45,3 +45,6 @@ public class MainActivity extends Activity implements SmartConfigLibrary_.Callba
     }
 }
 ```
+## Todos
+- Add optional parameters (deviceName, key etc.) to startSmartConfig() function
+- Add a callback function for any error
