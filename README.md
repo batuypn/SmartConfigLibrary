@@ -55,3 +55,4 @@ public class MainActivity extends Activity implements SmartConfigLibrary_.Callba
 - Add optional parameters (deviceName, key etc.) to startSmartConfig() function
 - Add setRunTime(int millis) function to change the interval (default is 1 second)
 - Add a callback function for any error
+
