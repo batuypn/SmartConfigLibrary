@@ -1,5 +1,5 @@
 # SmartConfigLibrary [![Maven Version](https://img.shields.io/github/release/batuypn/SmartConfigLibrary.svg?label=JitPack%20Maven)](https://jitpack.io/#batuypn/SmartConfigLibrary/v1.0.6)
-SmartConfig Android Library for CC3200
+SmartConfigWrapper Android Library for CC3200
 
 To get it, add the following text to your build file:
 ```
