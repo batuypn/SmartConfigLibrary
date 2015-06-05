@@ -5,6 +5,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.*;
+import android.os.Process;
 
 import com.integrity_project.smartconfiglib.SmartConfig;
 import com.integrity_project.smartconfiglib.SmartConfigListener;
@@ -33,7 +35,7 @@ public class SmartConfigLibrary {
     JSONArray recentDevicesArray;
 
     byte[] freeData;
-    SmartConfig smartConfig;
+    SmartConfig smartConfig = null;
     SmartConfigListener smartConfigListener;
 
     @Pref
@@ -110,9 +112,18 @@ public class SmartConfigLibrary {
 
     public void stopSmartConfig() {
         try {
-            smartConfig.stopTransmitting();
+            if(smartConfig != null)
+                smartConfig.stopTransmitting();
             runTime = SmartConfigConstants.SC_RUNTIME;
-            mDnsHelper.stopDiscovery();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    // Start thread with low priorit
+                    android.os.Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
+                    mDnsHelper.stopDiscovery();
+                }
+            }).start();
+
             Thread.sleep(SmartConfigConstants.JMDNS_CLOSE_TIME);
         } catch (Exception e) {
             e.printStackTrace();
